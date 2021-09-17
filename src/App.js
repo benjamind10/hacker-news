@@ -2,6 +2,9 @@ import React from 'react';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
 import ResultList from './components/ResultList';
+import History from './components/History';
+import Route from './components/Route';
+import Header from './components/Header';
 
 let history = [];
 
@@ -17,10 +20,17 @@ class App extends React.Component {
   };
 
   render() {
+    console.log(this.state.results);
     return (
       <div className="ui container" style={{ marginTop: '10px' }}>
-        <SearchBar onSubmit={this.onSearchSubmit} />
-        <ResultList results={this.state.results} history={history} />
+        <Header />
+        <Route path="/">
+          <SearchBar onSubmit={this.onSearchSubmit} />
+          <ResultList results={this.state.results} history={history} />
+        </Route>
+        <Route path="/history">
+          <History history={history} />
+        </Route>
       </div>
     );
   }
