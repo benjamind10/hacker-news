@@ -1,3 +1,5 @@
+//Displays the search results on a list with an option to navigate to the specific link provided by the API
+
 import React from 'react';
 
 const ResultList = (props) => {

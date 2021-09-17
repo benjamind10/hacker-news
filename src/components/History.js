@@ -1,3 +1,5 @@
+//History page grabs all the search results passed as props and renders them as a list
+
 import React from 'react';
 
 const History = (props) => {

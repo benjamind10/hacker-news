@@ -8,13 +8,15 @@ import History from './components/History';
 import Route from './components/Route';
 import Header from './components/Header';
 
+//Keep track of the History state
 let history = [];
 
 class App extends React.Component {
   state = { results: [] };
 
+  //Performs the API call
   onSearchSubmit = async (term) => {
-    const response = await axios.get('http://hn.algolia.com/api/v1/search?', {
+    const response = await axios.get('https://hn.algolia.com/api/v1/search?', {
       params: { query: term },
     });
     history.push(term);
