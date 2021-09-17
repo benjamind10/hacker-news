@@ -1,7 +1,6 @@
 import React from 'react';
 
 const ResultList = (props) => {
-  console.log(props.results);
   const results = props.results.map((result) => {
     return (
       <div key={result.objectID} className="item">

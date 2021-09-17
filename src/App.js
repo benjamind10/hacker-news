@@ -1,3 +1,5 @@
+//Main App
+
 import React from 'react';
 import axios from 'axios';
 import SearchBar from './components/SearchBar';
@@ -20,13 +22,12 @@ class App extends React.Component {
   };
 
   render() {
-    console.log(this.state.results);
     return (
       <div className="ui container" style={{ marginTop: '10px' }}>
         <Header />
         <Route path="/">
           <SearchBar onSubmit={this.onSearchSubmit} />
-          <ResultList results={this.state.results} history={history} />
+          <ResultList results={this.state.results} />
         </Route>
         <Route path="/history">
           <History history={history} />
