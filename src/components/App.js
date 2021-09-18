@@ -29,7 +29,7 @@ class App extends React.Component {
         <Header />
         <Route path="/">
           <SearchBar onSubmit={this.onSearchSubmit} />
-          {this.state.results.length === 0 ? (
+          {!this.state.results.length ? (
             <div>Waiting for Search Parameter</div>
           ) : (
             <ResultList results={this.state.results} />

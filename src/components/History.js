@@ -14,7 +14,7 @@ const History = (props) => {
     );
   });
 
-  return history.length === 0 ? (
+  return !history.length ? (
     <div>Waiting for Results</div>
   ) : (
     <div className="ui celled list">{history}</div>
