@@ -7,7 +7,7 @@ const ResultList = (props) => {
     return (
       <div key={result.objectID} className="item">
         <div className="right floated content">
-          <a target="_blank" className="ui button" href={result.url}>
+          <a target="blank" className="ui button" href={result.url}>
             Go
           </a>
         </div>
