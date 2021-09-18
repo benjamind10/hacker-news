@@ -14,6 +14,7 @@ const History = (props) => {
     );
   });
 
+  //Returns the history results conditinally if there are any.
   return !history.length ? (
     <div>Waiting for Results</div>
   ) : (

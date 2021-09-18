@@ -1,13 +1,13 @@
 //Displays the search results on a list with an option to navigate to the specific link provided by the API
 
-import React from 'react';
+import React from "react";
 
 const ResultList = (props) => {
   const results = props.results.map((result) => {
     return (
       <div key={result.objectID} className="item">
         <div className="right floated content">
-          <a className="ui button" href={result.url}>
+          <a target="_blank" className="ui button" href={result.url}>
             Go
           </a>
         </div>

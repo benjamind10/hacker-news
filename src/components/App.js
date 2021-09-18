@@ -23,6 +23,9 @@ class App extends React.Component {
     this.setState({ results: response.data.hits });
   };
 
+  //Renders the routing aspect of the app and will conditionally render the
+  //ResultList component based on if there are results or not
+
   render() {
     return (
       <div className="ui container" style={{ marginTop: "10px" }}>
