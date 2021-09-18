@@ -1,3 +1,6 @@
+//Handles navigation event so that we don't have to re render the whole app when changing pages
+//It will be passed down to each component so they can listen for the event
+
 import React from 'react';
 
 const Link = ({ className, href, children }) => {

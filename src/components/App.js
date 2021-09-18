@@ -1,12 +1,12 @@
 //Main App
 
-import React from 'react';
-import axios from 'axios';
-import SearchBar from './components/SearchBar';
-import ResultList from './components/ResultList';
-import History from './components/History';
-import Route from './components/Route';
-import Header from './components/Header';
+import React from "react";
+import axios from "axios";
+import SearchBar from "./SearchBar";
+import ResultList from "./ResultList";
+import History from "./History";
+import Route from "./Route";
+import Header from "./Header";
 
 //Keep track of the History state
 let history = [];
@@ -16,7 +16,7 @@ class App extends React.Component {
 
   //Performs the API call
   onSearchSubmit = async (term) => {
-    const response = await axios.get('https://hn.algolia.com/api/v1/search?', {
+    const response = await axios.get("https://hn.algolia.com/api/v1/search?", {
       params: { query: term },
     });
     history.push(term);
@@ -25,11 +25,15 @@ class App extends React.Component {
 
   render() {
     return (
-      <div className="ui container" style={{ marginTop: '10px' }}>
+      <div className="ui container" style={{ marginTop: "10px" }}>
         <Header />
         <Route path="/">
           <SearchBar onSubmit={this.onSearchSubmit} />
-          <ResultList results={this.state.results} />
+          {this.state.results.length === 0 ? (
+            <div>Waiting for Search Parameter</div>
+          ) : (
+            <ResultList results={this.state.results} />
+          )}
         </Route>
         <Route path="/history">
           <History history={history} />

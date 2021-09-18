@@ -1,3 +1,6 @@
+//Will render a component (children) depending on the pathname
+//Routing done from scrath without using react-router
+
 import { useEffect, useState } from 'react';
 
 const Route = ({ path, children }) => {
@@ -13,6 +16,7 @@ const Route = ({ path, children }) => {
       window.removeEventListener('popstate', onLocationChange);
     };
   }, []);
+
   return currentPath === path ? children : null;
 };
 

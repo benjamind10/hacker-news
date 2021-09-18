@@ -1,6 +1,6 @@
 //History page grabs all the search results passed as props and renders them as a list
 
-import React from 'react';
+import React from "react";
 
 const History = (props) => {
   const history = props.history.map((story, index) => {
@@ -13,7 +13,12 @@ const History = (props) => {
       </div>
     );
   });
-  return <div className="ui celled list">{history}</div>;
+
+  return history.length === 0 ? (
+    <div>Waiting for Results</div>
+  ) : (
+    <div className="ui celled list">{history}</div>
+  );
 };
 
 export default History;
