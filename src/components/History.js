@@ -1,6 +1,6 @@
 //History page grabs all the search results passed as props and renders them as a list
 
-import React from "react";
+import React from 'react';
 
 const History = (props) => {
   const history = props.history.map((story, index) => {
