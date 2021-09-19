@@ -19,7 +19,11 @@ class App extends React.Component {
     const response = await axios.get("https://hn.algolia.com/api/v1/search?", {
       params: { query: term },
     });
-    history.push(term);
+
+    //Simple check on the history array so it does not display duplicate results
+    if (history.indexOf(term) === -1) {
+      history.push(term);
+    }
     this.setState({ results: response.data.hits });
   };
 

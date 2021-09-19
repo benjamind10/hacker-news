@@ -1,9 +1,9 @@
 //SearchBar component its job is just to simply render a search bar that will take input from the user.
 
-import React from 'react';
+import React from "react";
 
 class SearchBar extends React.Component {
-  state = { term: '' };
+  state = { term: "" };
 
   //Prevents the normal behavior of a form and updates the search state
   onFormSubmit = (event) => {
@@ -23,6 +23,7 @@ class SearchBar extends React.Component {
               value={this.state.term}
               onChange={(e) => this.setState({ term: e.target.value })}
               placeholder="Search by entering a term and pressing the 'Enter' key."
+              autoFocus={true}
             />
           </div>
         </form>
