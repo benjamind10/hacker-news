@@ -5,8 +5,8 @@ import axios from 'axios';
 import SearchBar from './SearchBar';
 import ResultList from './ResultList';
 import History from './History';
-import Route from './Route';
-import Header from './Header';
+import Route from './navbar/Route';
+import Header from './navbar/Header';
 
 //Keep track of the History state
 let history = [];
