@@ -21,9 +21,8 @@ class App extends React.Component {
     });
 
     //Simple check on the history array so it does not display duplicate results
-    if (history.indexOf(term) === -1) {
-      history.push(term);
-    }
+    if (history.indexOf(term) === -1) history.push(term);
+
     this.setState({ results: response.data.hits });
   };
 
