@@ -7,6 +7,7 @@ import ResultList from './ResultList';
 import History from './History';
 import Route from './navbar/Route';
 import Header from './navbar/Header';
+import Home from './Home';
 
 //Keep track of the History state
 let history = [];
@@ -34,6 +35,9 @@ class App extends React.Component {
       <div className="ui container" style={{ marginTop: '10px' }}>
         <Header />
         <Route path="/">
+          <Home />
+        </Route>
+        <Route path="/search">
           <SearchBar onSubmit={this.onSearchSubmit} />
           {!this.state.results.length ? (
             <div>Waiting for Search Parameter</div>
